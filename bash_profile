@@ -13,7 +13,8 @@
 #  6.   Networking
 #  7.   System Operations & Information
 #  8.   Web Development
-#  9.   Reminders & Notes
+#  9.   MISCELLANEOUS
+#  10.  Reminders & Notes
 #
 #  ---------------------------------------------------------------------------
 
@@ -267,9 +268,14 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 #   -------------------------------------------------------------------
     httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
+#   ---------------------------------------
+#   9.  MISCELLANEOUS
+#   ---------------------------------------
+
+. /Users/matt/Programming/Bash/Tutorials-Point/Tutorials-Point.sh   # Add function support from sh script to bash 
 
 #   ---------------------------------------
-#   9.  REMINDERS & NOTES
+#   10.  REMINDERS & NOTES
 #   ---------------------------------------
 
 #   remove_disk: spin down unneeded disk
