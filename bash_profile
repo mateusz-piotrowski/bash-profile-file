@@ -1,6 +1,8 @@
 #  ---------------------------------------------------------------------------
 #
-#  Description:  This file holds all my BASH configurations and aliases
+#  Description:  This file holds all my BASH configurations and aliases.
+#                My file version was originally copied from:
+#                https://gist.github.com/natelandau/10654137
 #
 #  Sections:
 #  1.   Environment Configuration
