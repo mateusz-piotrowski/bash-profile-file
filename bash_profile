@@ -272,7 +272,14 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 #   9.  MISCELLANEOUS
 #   ---------------------------------------
 
-. /Users/matt/Programming/Bash/Tutorials-Point/Tutorials-Point.sh   # Add function support from sh script to bash 
+tt-pnt ()
+{
+  cd /Users/matt/Programming/Java/Tutorials-Point/
+  atom .
+  ;
+}
+
+#. /Users/matt/Programming/Bash/Tutorials-Point/Tutorials-Point.sh   # Add function support from sh script to bash
 
 #   ---------------------------------------
 #   10.  REMINDERS & NOTES
