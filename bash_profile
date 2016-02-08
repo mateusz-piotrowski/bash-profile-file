@@ -276,7 +276,6 @@ tt-pnt ()
 {
   cd /Users/matt/Programming/Java/Tutorials-Point/
   atom .
-  ;
 }
 
 #. /Users/matt/Programming/Bash/Tutorials-Point/Tutorials-Point.sh   # Add function support from sh script to bash
