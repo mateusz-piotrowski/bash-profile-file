@@ -13,8 +13,7 @@
 #  6.   Networking
 #  7.   System Operations & Information
 #  8.   Web Development
-#  9.   MISCELLANEOUS
-#  10.  Reminders & Notes
+#  9.   Reminders & Notes
 #
 #  ---------------------------------------------------------------------------
 
@@ -270,19 +269,7 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
     httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
 #   ---------------------------------------
-#   9.  MISCELLANEOUS
-#   ---------------------------------------
-
-tt-pnt ()
-{
-  cd /Users/matt/Programming/Java/Tutorials-Point/
-  atom .
-}
-
-#. /Users/matt/Programming/Bash/Tutorials-Point/Tutorials-Point.sh   # Add function support from sh script to bash
-
-#   ---------------------------------------
-#   10.  REMINDERS & NOTES
+#   9.  REMINDERS & NOTES
 #   ---------------------------------------
 
 #   remove_disk: spin down unneeded disk
@@ -310,3 +297,7 @@ tt-pnt ()
 #   e.g.: hdiutil create -size 10m 10MB.dmg
 #   the above create files that are almost all zeros - if random bytes are desired
 #   then use: ~/Dev/Perl/randBytes 1048576 > 10MB.dat
+
+#   function schema
+#   name()
+#   {}
