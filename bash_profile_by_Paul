@@ -1,0 +1,39 @@
+# git prompt
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+source ~/.git-prompt.sh
+
+PROMPT_COMMAND="$PROMPT_COMMAND;"'__git_ps1 "\h:\W" "\\\$ "'
+
+# bash
+shopt -s histverify
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+# binstubs
+PATH="./bin:$PATH"
+
+
+# colors
+LSCOLORS=gxfxcxdxbxegedabagacad
+
+
+# aliases
+alias dul="diskutil list"
+alias eject="diskutil eject"
+alias ls="ls -GF"
+alias ll="ls -l"
+
+
+# bundler editor
+export BUNDLER_EDITOR="atom"
