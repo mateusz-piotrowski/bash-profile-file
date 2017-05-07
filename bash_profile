@@ -21,13 +21,6 @@
 #   1.  ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-#   Change Command Prompt
-#   ------------------------------------------------------------
-#   export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-#   export PS2="| => "
-
-    PROMPT_COMMAND="$PROMPT_COMMAND;"'__git_ps1 "| \w @ \h (\u)\n|" " \\\$ "'
-
 #   Set Git Prompt
 #   ------------------------------------------------------------
     GIT_PS1_SHOWCOLORHINTS=1
@@ -37,6 +30,11 @@
     GIT_PS1_SHOWUPSTREAM="auto"
 
     source ~/.git-prompt.sh
+
+#   Change Command Prompt
+#   ------------------------------------------------------------
+    PROMPT_COMMAND="$PROMPT_COMMAND;"'__git_ps1 "\u@\h:\w" "\\\$ "'
+
 
 #   Set Paths
 #   ------------------------------------------------------------
