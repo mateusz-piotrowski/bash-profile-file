@@ -1,28 +1,35 @@
-## Description
+## .bash_profile file
 
-This project is contain bash_profile file with changes to improve communication using bash console.
+### Description
 
-## Motivation
+This project is contain .bash_profile file
+with changes to improve communication using bash shell.
 
-Bash_Profile file was changed and updated to add new functionality to system commands.
+### Motivation
 
-## Installation
+.bash_profile file was changed and updated
+to add new functionalities to system commands.
+
+### Installation
 
 1. Clone repository from server.
 
-```
-git clone https://gitlab.com/mapispace/bash-profile-file.git
-```
-2. Copy bash_profile file to yours user folder.
+    ```
+    git clone https://gitlab.com/mapispace/bash-profile-file.git
+    ```
 
-```
-cp bash_profile ~/.bash_profile
-```
+1. Copy files to home folder.
 
-## Contributor
+    ```
+    cp bash_profile ~/.bash_profile
+    cp git-prompt.sh ~/.git-prompt.sh
+    cp terminal-prompt.sh ~/.terminal-prompt.sh 
+    ```
+
+### Contributor
 
 Mateusz Piotrowski.
 
-## License
+### License
 
-MIT license.
+MIT
