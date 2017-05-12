@@ -33,6 +33,7 @@
 
 #   Change Command Prompt
 #   ------------------------------------------------------------
+
     PROMPT_COMMAND='__git_ps1 "\h:\W" "\\\$ "'";$PROMPT_COMMAND"
 
 #   Set Paths
@@ -244,7 +245,12 @@ EOT
 #   7.  SYSTEMS OPERATIONS & INFORMATION
 #   ---------------------------------------
 
-    alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
+#   lock:  run system lock
+#   -------------------------------------------------------------------
+    alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+#   mountReadWrite:  For use when booted into single-user
+    alias mountReadWrite='/sbin/mount -uw /'
 
 #   cleanupDS:  Recursively delete .DS_Store files
 #   -------------------------------------------------------------------
