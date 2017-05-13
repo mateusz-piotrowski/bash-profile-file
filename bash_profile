@@ -31,10 +31,14 @@
 
     source ~/.git-prompt.sh
 
+#   My default command prompt
+#   ------------------------------------------------------------
+#   PROMPT_COMMAND='__git_ps1 "\h:\W" "\\\$ "'";$PROMPT_COMMAND"
+
+
 #   Change Command Prompt
 #   ------------------------------------------------------------
 
-    PROMPT_COMMAND='__git_ps1 "\h:\W" "\\\$ "'";$PROMPT_COMMAND"
 
 #   Set Paths
 #   ------------------------------------------------------------
@@ -56,13 +60,12 @@
 #   (this is all commented out as I use Mac Terminal Profiles)
 #   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 #   ------------------------------------------------------------
-    export CLICOLOR=1
-    export LSCOLORS=GxFxCxDxBxegedabagaced
+#   export CLICOLOR=1
+#   export LSCOLORS=GxFxCxDxBxegedabagaced
 
 #   -----------------------------
 #   2.  MAKE TERMINAL BETTER
 #   -----------------------------
-
     alias cp='cp -iv'                           # Preferred 'cp' implementation
     alias mv='mv -iv'                           # Preferred 'mv' implementation
     alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
@@ -163,7 +166,6 @@ EOT
 #   ---------------------------
 #   4.  SEARCHING
 #   ---------------------------
-
     alias qfind="find . -name "                 # qfind:    Quickly search for file
     ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
     ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
