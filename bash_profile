@@ -39,16 +39,15 @@
 #   Change Command Prompt
 #   ------------------------------------------------------------
 
+#   export PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
-#   PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+#   export PS1='\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W\[\033[0m\] \[\033[1;92m\]$(__git_ps1 "(%s)")\[\033[0m\]$ '
 
-#    export PS1='\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W\[\033[0m\] \[\033[1;92m\]$(__git_ps1 "(%s)")\[\033[0m\]$ '
-
-#    export PS1="\[$(tput bold)$(tput setb 4)$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
-#    export PS1="\[\033[34m\][\$(date +%H%M)][\u@\h:\w]$ "
-#    export PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
-#    export PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
-#    export PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]$(acpi -b | awk "{print \$4}" | cut -b1-3) $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
+#   export PS1="\[$(tput bold)$(tput setb 4)$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
+#   export PS1="\[\033[34m\][\$(date +%H%M)][\u@\h:\w]$ "
+#   export PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
+#   export PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
+#   export PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]$(acpi -b | awk "{print \$4}" | cut -b1-3) $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
 
 #    PS1_DEBIAN_CHROOT='${debian_chroot:+($debian_chroot)}'
 #    PS1_TIME='\033[01;31m\]\t \033[01;32m\]'
@@ -83,8 +82,7 @@
 #    PS1="\n"${SH_WHITE}${TL_ANGLE}"("${SH_BLUE}"\u"${SH_WHITE}"@"${SH_RED}"\h"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\$?"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}${BATT}${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\@ \d"${SH_WHITE}")\n"${BL_ANGLE}${HORIZ_LINE}"("${SH_GREEN}"\w"${SH_WHITE}")"${HORIZ_LINE}"("${SH_YELLOW}${FILES_STAT}" files, "${FILES_SIZE}${SH_WHITE}")"${HORIZ_LINE}${SH_BLUE}${GIT_PS1}${SH_WHITE}"> "${SH_GREEN}
 #    fi
 #    trap 'echo -ne "\e[0m"' DEBUG
-
-
+#    ------------
 
 #    ------------
 #    SH_WHITE="\[\033[1;37m\]"
@@ -112,6 +110,7 @@
 #    trap 'echo -ne "\e[0m"' DEBUG
 #    ------------
 
+#    ------------
 # PS1="\n\e[30;1mUSER ( \e[0m\e[33;1m\w\e[0m\e[30;1m )\e[0m\e[33;33m\n$ \e[0m"
 
 # PS1='\[\e[1;36m\]\d \[\e[1;32m\]\t \[\e[1;33m\]\u@\[\e[1;35m\]\h:\w\$\[\e[0;31m\]'
@@ -123,7 +122,7 @@
 # PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -n "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p"))"\033[38;5;22m/"$((`sed -n "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"' \
 # PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
 
-
+#    ------------
 # function aa_prompt_defaults ()
 # {
 #    local colors=`tput colors 2>/dev/null||echo -n 1` C=;
@@ -293,7 +292,6 @@
 #
 # PATH=$PATH:$HOME/.rvm/bin
 # ---------------------------------------------------
-
 
 # ------------------------
 # # #~/.bashrc
@@ -1309,18 +1307,19 @@
 #   ----------------------------------------------------------------------------
 
 #   ----------------------------------------------------------------------------
-#   export PS1=`echo -ne "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\] "`
+#  export PS1=`echo -ne "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\]\ \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')] \$(if [ ${EUID} -eq 0 ]; then echo '1'; else echo '4'; fi)]>$n"`
+
+#   "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\]"
+
+#   Checked and accepted command prompt
+#   ------------------------------------------------------------
+#   Number 1
+    export PS1="ǁ \u@\h ǁ \W ]\$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ǁ\nǁ $ "
+
+
 #   ----------------------------------------------------------------------------
 
 #   ----------------------------------------------------------------------------
-#   n="${c}m\]"
-#   export PS1="$n\n${c}1;3\$(if [ \$? -eq 0 ]; then echo '2'; else echo '1'; fi);40m\]*$n ${c}36;40m\]\@ \d$n ${c}35;40m\]\j$n ${c}37;40m\]\u${c}33m\]@\h$n ${c}1;34;40m\]\w$n ${c}32;40m\]\$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /bin/sed 's/total //')${c}m\]\n${c}1;3\$(if [ ${EUID} -eq 0 ]; then echo '1'; else echo '4'; fi);47m\]>$n "
-#  ----------------------------------------------------------------------------
-
-#   ----------------------------------------------------------------------------
-#   export PS1="\n${p}╔ǁ ${c}1;3\$(if [ \$? -eq 0 ]; then echo '2'; else echo '1'; fi)m\]*$p ǁ ${c}36m\]\@ \d$p ǁ ${c}35m\]\j$p ǁ ${c}30m\]\u${c}33m\]@\h$p ǁ ${c}1;34m\]\w$p ǁ ${c}32m\]\$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /bin/sed 's/total //')${c}m\]$p ǁ═╗\n╚═${c}1;3\$(if [ ${EUID} -eq 0 ]; then echo '1'; else echo '4'; fi)m\]»${c}m\] "
-#   ----------------------------------------------------------------------------
-
 
 #   Set Paths
 #   ------------------------------------------------------------
@@ -1342,8 +1341,8 @@
 #   (this is all commented out as I use Mac Terminal Profiles)
 #   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 #   ------------------------------------------------------------
-#   export CLICOLOR=1
-#   export LSCOLORS=GxFxCxDxBxegedabagaced
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
 
 #   -----------------------------
 #   2.  MAKE TERMINAL BETTER
