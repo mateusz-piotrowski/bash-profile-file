@@ -1302,20 +1302,13 @@
 #   fi
 #   ----------------------------------------------------------------------------
 
-#   ----------------------------------------------------------------------------
-#   exportPS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\w\n\$ "
-#   ----------------------------------------------------------------------------
-
-#   ----------------------------------------------------------------------------
-#  export PS1=`echo -ne "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\]\ \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')] \$(if [ ${EUID} -eq 0 ]; then echo '1'; else echo '4'; fi)]>$n"`
-
-#   "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\]"
-
 #   Checked and accepted command prompt
 #   ------------------------------------------------------------
 #   Number 1
-    export PS1="ǁ \u@\h ǁ \W ]\$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ǁ\nǁ $ "
+#   export PS1="[ \u@\h | \W  \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ]\n $ "
 
+#   Number 2
+    export PS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\w\n\$ "
 
 #   ----------------------------------------------------------------------------
 
