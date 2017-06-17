@@ -1294,26 +1294,24 @@
 #   ----------------------------------------------------------------------------
 #   export PS1="%F{white}%K{red} %n %f%k%F{red}%K{green}"$'\u25b6'"%f%k%F{white}%K{green} %m %f%k%F{green}%K{blue}"$'\u25b6'"%f%k%F{white}%K{blue} %~ %f%k%F{blue}"$'\u25b6'"%f"
 
-#   ----------------------------------------------------------------------------
-#   if ((EUID)); then
-#     PS1="\[\e]0;\u@\h:\w\a\e[1;32m\]\u@\h\[\e[34m\] \w \[\e[0m\]\$ "
-#   else
-#     PS1="\[\e]0;\u@\h:\w\a\e[1;31m\]\h\[\e[34m\] \w \[\e[0m\]\$ "
-#   fi
-#   ----------------------------------------------------------------------------
 
+#   ----------------------------------------------------------------------------
 #   Checked and accepted command prompt
 #   ------------------------------------------------------------
-#   Number 1
-#   export PS1="[ \u@\h | \W  \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ]\n $ "
+#   Number 1 #
+    export PS1="[ \u@\h | \W  \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ]\n $ "
 
 #   Number 2
-    export PS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\w\n\$ "
+#   export PS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\w\n\$ "
+
+#   Number 3
+    if ((EUID)); then
+      PS1="\[\e]0;\u@\h:\w\a\e[1;32m\]\u@\h\[\e[34m\] \w \[\e[0m\]\$ "
+    else
+      PS1="\[\e]0;\u@\h:\w\a\e[1;31m\]\h\[\e[34m\] \w \[\e[0m\]\$ "
+    fi
 
 #   ----------------------------------------------------------------------------
-
-#   ----------------------------------------------------------------------------
-
 #   Set Paths
 #   ------------------------------------------------------------
 
