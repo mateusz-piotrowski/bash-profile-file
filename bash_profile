@@ -937,29 +937,6 @@
 # prompt_hyacinthe_setup "$@"
 #
 
-# ----------------------------------------------------------------------------
-# #!/bin/bash
-#
-# RED="\[\033[0;31m\]"
-# YELLOW="\[\033[0;33m\]"
-# BLUE="\[\033[0;34m\]"
-#
-# BOLD_GREEN="\[\033[1;32m\]"
-# BOLD_BLUE="\[\033[1;34m\]"
-#
-# NORMAL="\[\033[0m\]"
-#
-# export GIT_PS1_SHOWDIRTYSTATE=true
-# export GIT_PS1_SHOWUNTRACKEDFILES=true
-# export GIT_PS1_STATESEPARATOR="$RED"
-#
-# # Don't show if we have a stash
-# unset GIT_PS1_SHOWSTASHSTATE
-# # We want our own colors
-# unset GIT_PS1_SHOWCOLORHINTS
-#
-# export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_BLUE\w$NORMAL\" \"\342\230\242 \" \"$YELLOW[%s$YELLOW]$NORMAL\""
-
 #	----------------------------------------------------------------------------
 
 #   ----------------------------------------------------------------------------
@@ -985,14 +962,14 @@
 
 #   ------------------------------------------------------------
 
-#	Number 4
-#	Customize BASH PS1 prompt to show current GIT repository and branch.
-#	by Mike Stewart - http://MediaDoneRight.com
+#	  Number 4
+#	  Customize BASH PS1 prompt to show current GIT repository and branch.
+#	  by Mike Stewart - http://MediaDoneRight.com
 
-#	Reset
+#	  Reset
 # 	Color_Off="\[\033[0m\]"       # Text Reset
 
-#	Regular Colors
+#	  Regular Colors
 # 	Black="\[\033[0;30m\]"        # Black
 # 	Red="\[\033[0;31m\]"          # Red
 # 	Green="\[\033[0;32m\]"        # Green
@@ -1002,7 +979,7 @@
 # 	Cyan="\[\033[0;36m\]"         # Cyan
 # 	White="\[\033[0;37m\]"        # White
 
-#	Bold
+#	  Bold
 # 	BBlack="\[\033[1;30m\]"       # Black
 # 	BRed="\[\033[1;31m\]"         # Red
 # 	BGreen="\[\033[1;32m\]"       # Green
@@ -1012,7 +989,7 @@
 # 	BCyan="\[\033[1;36m\]"        # Cyan
 # 	BWhite="\[\033[1;37m\]"       # White
 
-#	Underline
+#	  Underline
 # 	UBlack="\[\033[4;30m\]"       # Black
 # 	URed="\[\033[4;31m\]"         # Red
 # 	UGreen="\[\033[4;32m\]"       # Green
@@ -1022,7 +999,7 @@
 # 	UCyan="\[\033[4;36m\]"        # Cyan
 # 	UWhite="\[\033[4;37m\]"       # White
 
-#	Background
+#	  Background
 # 	On_Black="\[\033[40m\]"       # Black
 # 	On_Red="\[\033[41m\]"         # Red
 # 	On_Green="\[\033[42m\]"       # Green
@@ -1032,7 +1009,7 @@
 # 	On_Cyan="\[\033[46m\]"        # Cyan
 # 	On_White="\[\033[47m\]"       # White
 
-#	High Intensty
+#	  High Intensty
 # 	IBlack="\[\033[0;90m\]"       # Black
 # 	IRed="\[\033[0;91m\]"         # Red
 # 	IGreen="\[\033[0;92m\]"       # Green
@@ -1042,7 +1019,7 @@
 # 	ICyan="\[\033[0;96m\]"        # Cyan
 # 	IWhite="\[\033[0;97m\]"       # White
 
-#	Bold High Intensty
+#	  Bold High Intensty
 # 	BIBlack="\[\033[1;90m\]"      # Black
 # 	BIRed="\[\033[1;91m\]"        # Red
 # 	BIGreen="\[\033[1;92m\]"      # Green
@@ -1052,7 +1029,7 @@
 # 	BICyan="\[\033[1;96m\]"       # Cyan
 # 	BIWhite="\[\033[1;97m\]"      # White
 
-#	High Intensty backgrounds
+#	  High Intensty backgrounds
 # 	On_IBlack="\[\033[0;100m\]"   # Black
 # 	On_IRed="\[\033[0;101m\]"     # Red
 # 	On_IGreen="\[\033[0;102m\]"   # Green
@@ -1062,7 +1039,7 @@
 # 	On_ICyan="\[\033[0;106m\]"    # Cyan
 # 	On_IWhite="\[\033[0;107m\]"   # White
 
-#	Various variables you might want for your PS1 prompt instead
+#	  Various variables you might want for your PS1 prompt instead
 # 	Time12h="\T"
 # 	Time12a="\@"
 # 	PathShort="\w"
@@ -1079,14 +1056,14 @@
 # 		fi
 
 #  	if [ -n "$SSH_CLIENT" ]; then
-#	connecting via ssh, use red coloured prompt
+#	  connecting via ssh, use red coloured prompt
 #      export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;\
-#      if [ $? -eq 0 ]; then 
-#        echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; 
-#        if [ "$?" -eq "0" ]; then 
+#      if [ $? -eq 0 ]; then
+#        echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1;
+#        if [ "$?" -eq "0" ]; then
 #          # @4 - Clean repository - nothing to commit
-#          echo "'$BIGreen'"$(__git_ps1 " (%s)"); 
-#        else 
+#          echo "'$BIGreen'"$(__git_ps1 " (%s)");
+#        else
 #          # @5 - Changes to working tree
 #          echo "'$BIRed'"$(__git_ps1 " {%s}");
 #        fi) '$BWhite$PathShort$Color_Off' \n'$On_IRed" SSH "$Color_Off" "$Username@$Host' $ "; \
@@ -1095,14 +1072,14 @@
 #        echo " '$BWhite$PathShort$Color_Off' \n'$On_IRed" SSH "$Color_Off" "$Username@$Host' $ "; \
 #      fi)'
 #    	else
-#	local coloured prompt
+#	  local coloured prompt
 #     export PS1=$IBlack$Time12h$Color_Off'$(git branch &>/dev/null;
 #      if [ $? -eq 0 ]; then \
 #        echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1;
 #        if [ "$?" -eq "0" ]; then
 #          # @4 - Clean repository - nothing to commit
 #          echo "'$BIGreen'"$(__git_ps1 " (%s)");
-#        else 
+#        else
 #          # @5 - Changes to working tree
 #          echo "'$BIRed'"$(__git_ps1 " {%s}");
 #        fi) '$White$PathShort$Color_Off' \n'$Username@$Host' $ ";
@@ -1117,22 +1094,47 @@
 #   Number 5
 
 # 	Check if we are local or remote via ssh. if remote, use red colours.
-	if [ -n "$SSH_CLIENT" ]; then
-#	Connecting via ssh, use red coloured prompt
-	    if [ "$color_prompt" = yes ]; then
-	        PS1='[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
-	    else
-	        PS1="\[\033[31m\][\w]\[\033[0m\]\n\[\033[1;33m\]\u\[\033[1;31m\] $ \[\033[0m\]"
-	    fi
-	else
-#	Local coloured prompt
-	    if [ "$color_prompt" = yes ]; then
-	        PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	    else
-	        PS1="\[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\] $ \[\033[0m\]"
-	    fi
-	fi
-	unset color_prompt force_color_prompt
+#  if [ -n "$SSH_CLIENT" ]; then
+#	  Connecting via ssh, use red coloured prompt
+#     if [ "$color_prompt" = yes ]; then
+#         PS1='[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
+#     else
+#         PS1="\[\033[31m\][\w]\[\033[0m\]\n\[\033[1;33m\]\u\[\033[1;31m\] $ \[\033[0m\]"
+#     fi
+#   else
+#	  Local coloured prompt
+#     if [ "$color_prompt" = yes ]; then
+#         PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#     else
+#         PS1="\[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\] $ \[\033[0m\]"
+#     fi
+#   fi
+#   unset color_prompt force_color_prompt
+
+#   ------------------------------------------------------------
+
+#   Number 6
+
+   RED="\[\033[0;31m\]"
+   YELLOW="\[\033[0;33m\]"
+   BLUE="\[\033[0;34m\]"
+
+   BOLD_GREEN="\[\033[1;32m\]"
+   BOLD_PURPLE="\[\033[1;34m\]"
+
+   NORMAL="\[\033[0m\]"
+
+   export GIT_PS1_SHOWDIRTYSTATE=true
+   export GIT_PS1_SHOWUNTRACKEDFILES=true
+   export GIT_PS1_STATESEPARATOR="$RED"
+
+#   Don't show if we have a stash
+#   unset GIT_PS1_SHOWSTASHSTATE
+#   We want our own colors
+   unset GIT_PS1_SHOWCOLORHINTS
+
+   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
+
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
@@ -1187,7 +1189,7 @@
     if [ -f /usr/local/share/bash-completion/bash_completion ]; then
     . /usr/local/share/bash-completion/bash_completion
   	fi
-  	
+
 # 	Don't put duplicate lines or lines starting with space in the history.
 	HISTCONTROL=ignoreboth
 
