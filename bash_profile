@@ -496,446 +496,40 @@
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-# export PS1="\n[\033[1;37m]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '$bold${red}\u'; else echo '$bold${green}\u'; fi)[\033[1;37m])\342\224\200([\033[1;34m]#[\033[1;37m])\342\224\200([\033[1;33m]\@ \d[\033[1;37m])[\033[1;37m]\n\342\224\224\342\224\200([\033[1;32m]\w[\033[1;37m])\342\224\200([\033[1;32m]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b[\033[1;37m])\342\224\200> [\033[0m]"
+ # export PS1="\n[\033[1;37m]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '$bold${red}\u'; else echo '$bold${green}\u'; fi)[\033[1;37m])\342\224\200([\033[1;34m]#[\033[1;37m])\342\224\200([\033[1;33m]\@ \d[\033[1;37m])[\033[1;37m]\n\342\224\224\342\224\200([\033[1;32m]\w[\033[1;37m])\342\224\200([\033[1;32m]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b[\033[1;37m])\342\224\200> [\033[0m]"
 # ----------------------------------------------------------------------------
 
-# ----------------------------------------------------------------------------
-#  export PS1='\[\e[0;36m\]┌─\[\e[1;37m\][\u@\h]\[\e[0m\]\[\e[0;36m\]─\[\e[0;93m\](\w)\n\[\e[0;36m\]└─\[\e[1;32m\][\A]\[\e[0m\]\$ '
+#  ----------------------------------------------------------------------------
 
-# ----------------------------------------------------------------------------
-  # export PS1='\u@\h:\w\$ '
-
-# ----------------------------------------------------------------------------
-
-# __git_ps1 ()
-# {
-#         local b="$(git symbolic-ref HEAD 2>/dev/null)";
-#         if [ -n "$b" ]; then
-#                 printf " (%s)" "${b##refs/heads/}";
-#         fi
-# }
-# export PS1='\
-# \[\e[01;30m\]\t \
-# `[ "$(screen -ls | grep -c Detach)" != "0" ]\
-# && echo "\[\e[00;34m\]$(screen -ls | grep -c Detach ) "`\
-# `[ "$(jobs -r | wc -l)" != "0" ]\
-# && echo "\[\e[00;33m\]$(jobs -r | wc -l ) "`\
-# `[ "$(jobs -s | wc -l)" != "0" ]\
-# && echo "\[\e[00;31m\]$(jobs -s | wc -l ) "`\
-# \[\e[01;37m\][\
-# `[ $UID == 0 -a $USER != $(logname) ]\
-# && echo "\[\e[00;31m\]"`\
-# `[ $UID == 0 -a $USER != $(logname) -a -z "$SUDO_USER" ]\
-# && echo "\[\e[01;31m\]"`\
-# `[ $UID == 0 -a $USER == $(logname) ]\
-# && echo "\[\e[01;33m\]"`\
-# `[ $UID != 0 -a $USER == $(logname) ]\
-# && echo "\[\e[00;32m\]"`\
-# `[ $UID != 0 -a $USER != $(logname) ]\
-# && echo "\[\e[00;33m\]"`\
-# \u\
-# \[\e[00;36m\]@\
-# `[ "$SSH_CLIENT" != "" -o "$SSH2_CLIENT" != "" ]\
-# && echo "\[\e[00;33m\]"\
-# || echo "\[\e[00;32m\]"`\
-# \h \
-# `[ -w "${PWD}" ]\
-# && echo "\[\e[01;34m\]\W"\
-# || echo "\[\e[01;31m\]\W"`\
-# \[\e[01;37m\]]\
-# `[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]]\
-# && echo "\[\e[01;31m\]"\
-# || echo "\[\e[01;32m\]"`$(__git_ps1 "(%s)")\[\e[00m\]\$ '
-                        #time in black  #[,bold white #  user, red   # @, cyan     # host, green   # dir,bold blue# ],bold white#   Check if something needs to be commited in git repo                                    # if so, bold red            #if not, bold green  #current git branch#prompt, normal
-# original from https://makandracards.com/makandra/1090-customize-your-bash-prompt
-#export PS1='\[\e[01;30m\]\t `if [ $? = 0 ]; then echo "\[\e[32m\]✔"; else echo "\[\e[31m\]✘"; fi` \[\e[00;37m\]\u\[\e[01;37m\]:`[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "\[\e[31m\]" || echo "\[\e[32m\]"`$(__git_ps1 "(%s)\[\e[00m\]")\[\e[01;34m\]\w\[\e[00m\]\$ '
-
-# ----------------------------------------------------------------------------
-# export PS1='$(if [[ $? == 0 ]]; then echo -e "\e[32m:)\e[m"; else echo -e "\e[31m:(\e[m"; fi)'
 # ----------------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------------
-# export PS1='[\W][$(if [[ $? == 0 ]]; then echo -e "\e[32m:)\e[m"; else echo -e "\e[31m:(\e[m"; fi)]$ '
-
-# ----------------------------------------------------------------------------
-# case "$TERM" in
-#     xterm-color) color_prompt=yes;;
-# esac
-#
-# force_color_prompt=yes
-#
-# if [ -n "$force_color_prompt" ]; then
-#     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-#   color_prompt=yes
-#     else
-#   color_prompt=
-#     fi
-# fi
-#
-# C_WHITE='\[\e[1;37m\]'
-# C_LIGHTGRAY='\[\e[0;37m\]'
-# C_GRAY='\[\e[1;30m\]'
-# C_BLACK='\[\e[0;30m\]'
-# C_RED='\[\e[0;31m\]'
-# C_LIGHTRED='\[\e[1;31m\]'
-# C_GREEN='\[\e[0;32m\]'
-# C_LIGHTGREEN='\[\e[1;32m\]'
-# C_BROWN='\[\e[0;33m\]'
-# C_YELLOW='\[\e[1;33m\]'
-# C_BLUE='\[\e[0;34m\]'
-# C_LIGHTBLUE='\[\e[1;34m\]'
-# C_PURPLE='\[\e[0;35m\]'
-# C_PINK='\[\e[1;35m\]'
-# C_CYAN='\[\e[0;36m\]'
-# C_LIGHTCYAN='\[\e[1;36m\]'
-# C_DEFAULT='\[\e[0m\]'
-#
-# function setsymbols() {
-#   local exit_status=$?
-#   local color_exit=
-#   local color_exit2=
-#   local color_exit3=
-#   local usym=
-#   local end_sym=\$
-#   local usegit=$1
-#   local id=`/usr/bin/id -u`
-#   #[ -n "$ID" -a "$ID" -le 200 ] && return
-#   [[ $id == 0 ]] && end_sym=\#
-#   if [ $exit_status = 0 ]; then
-#     if [[ $id == 0 ]]; then
-#       color_exit="$C_LIGHTBLUE"; color_exit2="$C_BLUE"; color_exit3="$C_WHITE";
-#     else
-#       color_exit="$C_LIGHTGREEN"; color_exit2="$C_GREEN"; color_exit3="$C_LIGHTBLUE";
-#     fi
-#     usym=":"
-#   else
-#     if [[ $id == 0 ]]; then
-#       color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_BROWN";
-#     else
-#       color_exit="$C_LIGHTRED"; color_exit2="$C_RED"; color_exit3="$C_LIGHTCYAN";
-#     fi
-#     usym="!"
-#   fi
-#   [ -n "$usegit" ] && [ $(git status --porcelain 2>/dev/null | wc -l | tr -d " ") != 0 ] && color_git="$C_BROWN" || color_git=
-#   [ $(jobs | wc -l | tr -d " ") != 0 ] && color_job="$C_BROWN" || color_job=
-#   PS1="${debian_chroot:+($debian_chroot)}${color_exit}\u${color_exit2}\
-# @\
-# ${color_exit}$HOSTNAME${color_exit2}${color_git}\
-# ${usym}\
-# ${color_exit3}\w${color_exit2}${color_job}\
-# ${end_sym}\
-# ${C_DEFAULT} "
-# }
-#
-# if [ "$color_prompt" = yes ]; then
-#     PROMPT_COMMAND=setsymbols
-# else
-#     PS1='\u@${HOSTNAME}:\w\$ '
-# fi
-# unset color_prompt force_color_prompt
 
 # ----------------------------------------------------------------------------
 
-# if [ -f /etc/bash_completion ]; then
-#     source /etc/bash_completion
-# fi
-#
-# __has_parent_dir () {
-#     # Utility function so we can test for things like .git/.hg without firing
-#     # up a separate process
-#     test -d "$1" && return 0;
-#
-#     current="."
-#     while [ ! "$current" -ef "$current/.." ]; do
-#         if [ -d "$current/$1" ]; then
-#             return 0;
-#         fi
-#         current="$current/..";
-#     done
-#
-#     return 1;
-# }
-#
-# __vcs_name() {
-#     if [ -d .svn ]; then
-#         echo "-[svn]";
-#     elif __has_parent_dir ".git"; then
-#         echo "-[$(__git_ps1 'git %s')]";
-#     elif __has_parent_dir ".hg"; then
-#         echo "-[hg $(hg branch)]"
-#     fi
-# }
-#
-# black=$(tput -Txterm setaf 0)
-# red=$(tput -Txterm setaf 1)
-# green=$(tput -Txterm setaf 2)
-# yellow=$(tput -Txterm setaf 3)
-# dk_blue=$(tput -Txterm setaf 4)
-# pink=$(tput -Txterm setaf 5)
-# lt_blue=$(tput -Txterm setaf 6)
-#
-# bold=$(tput -Txterm bold)
-# reset=$(tput -Txterm sgr0)
-#
-# export PS1='\n\[$bold\]\[$black\][\[$dk_blue\]\@\[$black\]]-[\[$green\]\u\[$yellow\]@\[$green\]\h\[$black\]]-[\[$pink\]\w\[$black\]]\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\[$reset\]\n\[$reset\]\$ '
-#
-# # export PS1='\[\033[01;32m\]\n\u@\h\[\033[00m\] -> \[\033[01;34m\]\w\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\n\$ '
-#
-# alias ls='ls -F --color=always'
-# alias dir='dir -F --color=always'
-# alias ll='ls -l'
-# alias cp='cp -iv'
-# alias rm='rm -i'
-# alias mv='mv -iv'
-# alias grep='grep --color=auto -i'
-# alias v='vim'
-#
-# alias ..='cd ..'
-#
-# alias chmod_files='find -maxdepth 10 -type f -exec chmod 644 {} \;'
-# alias chmod_folders='find -maxdepth 10 -type d -exec chmod 755 {} \;'
-#
-# alias apache_error='sudo tail -f  /var/log/apache2/error.log'
-#
-# del_recursive() {
-#     find . | grep '$1' | xargs rm
-# }
-#
-# process() {
-#     ps -ef | grep $1
-# }
-#
-# apache() {
-#     sudo service apache2 $1
-# }
-#
-# function extract()    # Handy Extract Program.
-# {
-#      if [ -f $1 ] ; then
-#          case $1 in
-#              *.tar.bz2)   tar xvjf $1     ;;
-#              *.tar.gz)    tar xvzf $1     ;;
-#              *.bz2)       bunzip2 $1      ;;
-#              *.rar)       unrar x $1      ;;
-#              *.gz)        gunzip $1       ;;
-#              *.tar)       tar xvf $1      ;;
-#              *.tbz2)      tar xvjf $1     ;;
-#              *.tgz)       tar xvzf $1     ;;
-#              *.zip)       unzip $1        ;;
-#              *.Z)         uncompress $1   ;;
-#              *.7z)        7z x $1         ;;
-#              *)           echo "'$1' cannot be extracted via >extract<" ;;
-#          esac
-#      else
-#          echo "'$1' is not a valid file"
-#      fi
-# }
 # ----------------------------------------------------------------------------
 
-# user
-# export PS1='\[\e[1;30m\]\t`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[0;36m\]\u\[\e[0m\]@\h \[\e[1;34m\]\w \$\[\e[0m\] '
-
-# root
-# export PS1='\[\e[1;30m\]\t`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[0;35m\]\u\[\e[0m\]@\h \[\e[1;34m\]\w \$\[\e[0m\] '
-
-# Unicode cheracters ✔ 'HEAVY CHECK MARK' (U+2714) and ✘ 'HEAVY BALLOT X' (U+2718)
 # ----------------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------------
-# color_red='\[\e[31m\]'
-# color_blue='\[\e[34m\]'
-# color_reset='\[\e[0m\]'
-#
-# export PS1=${color_red}'\u'${color_reset}'@'${color_blue}'\h'${color_reset}
+
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-# ps1_prompt() {
-#     local ps1_exit=$?
-#
-#     if [ $ps1_exit -eq 0 ]; then
-#         #ps1_status=`echo -e "\[\033[32m\]"'\$'"\[\033[0m\]"`
-#         ps1_status='\$'
-#     else
-#         ps1_status=`echo -e "\[\033[1;31m\]"'\$'"\[\033[0m\]"`
-#
-#     fi
-#
-#     ps1_git=''
-#     if [ "$(__git_ps1 %s)" != '' -a "$(__git_ps1 %s)" != 'master' ]; then
-#         ps1_git=" (\[\033[32m\]"$(__git_ps1 "%s")"\[\033[0m\])"
-#     fi
-#
-#     PS1="${debian_chroot:+($debian_chroot)}\u@\h:\[\033[01;34m\]\w\[\033[00m\]${ps1_git}${ps1_status} "
-# }
-# PROMPT_COMMAND="ps1_prompt;$PROMPT_COMMAND"
 
 # ----------------------------------------------------------------------------
-# Show current git branch in prompt, unless it's "master"
-#
-# Based on https://ttboj.wordpress.com/2013/10/10/show-current-git-branch-in-ps1-when-branch-is-not-master/
-# if test "$(type -t __git_ps1)" = "function" ; then
-#     test -z "$PS1_NO_GIT" && export PS1_NO_GIT="$PS1" || export PS1="$PS1_NO_GIT"
-#     branch_on_demand='echo -e " \e[32m"$(__git_ps1 "%s")"\e[0m"'
-#     branch_on_demand='$([ "$(__git_ps1 %s)" != "" -a "$(__git_ps1 %s)" != "master" ] && '"$branch_on_demand"' || :)'
-#     PS1="${PS1%%\\\$ }$branch_on_demand\$ "
-#     unset branch_on_demand
-# fi
-#
-# export GITHUB_USER=jhermann
-#
-# github_clone_fork() {
-#     local upstream="${1:?You need to provide an upstream repo name (user/name) as the 1st arg}"
-#     local user="${upstream%/*}"
-#     local repo="${upstream#*/}"
-#
-#     git clone "git@github.com-jh:jhermann/$repo.git"
-#     cd "$repo"
-#     git remote add upstream "https://github.com/$upstream.git"
-#     git-config-jhermann
-#     git remote update # test repos
-# }
+
 # ----------------------------------------------------------------------------
 
-  # hyacinthe prompt theme with git support
-# Derivated from <http://sebastiancelis.com/2009/11/16/zsh-prompt-git-users/>
-#
-# prompt_hyacinthe_help () {
-#   cat <<'EOF'
-#
-#   This prompt is color-scheme-able.  You can invoke it thus:
-#
-#   prompt hyacinthe [<color1> [<color2> [<color3> [<color4> [<color5>]]]]]
-#
-#   The defaults colors are red, cyan, green, white, and yellow, respectively.
-#
-# EOF
-# }
-#
-# prompt_hyacinthe_setup () {
-#
-#   local p_date p_userpwd p_end p_win
-#   local -A pc
-#
-#   setopt prompt_subst
-#
-#   pcc[1]=${1:-${${SSH_CLIENT+'yellow'}:-'red'}}
-#   pcc[2]=${2:-'cyan'}
-#
-#   if [[ "$USERNAME" == "root" ]] ; then
-#     pcc[3]=${3:-'red'}
-#   else
-#     pcc[3]=${3:-'green'}
-#   fi
-#
-#   pcc[4]=${4:-'white'}
-#   pcc[5]=${5:-'yellow'}
-#
-#   pc['\[']="%F{$pcc[1]}["
-#   pc['\]']="%F{$pcc[1]}]"
-#   pc['<']="%F{$pcc[1]}<"
-#   pc['>']="%F{$pcc[1]}>"
-#   pc['\(']="%F{$pcc[1]}("
-#   pc['\)']="%F{$pcc[1]})"
-#
-#   p_date="$pc['\[']%F{$pcc[2]}%D{%R}$pc['\]']"
-#
-#   [[ -n "$WINDOW" ]] && p_win="$pc['\(']%F{$pcc[4]}$WINDOW$pc['\)']"
-#
-#   p_userpwd="$pc['<']%F{$pcc[3]}%n@%m$p_win%F{$pcc[5]}:%F{$pcc[4]}%~$pc['>']"
-#
-#   p_end="%f%B%#%b "
-#
-#   zle_highlight[(r)default:*]=default:$pcc[2]
-#   prompt="$p_date $p_userpwd $p_end"
-#   PS2='%(4_.\.)%3_> %E'
-#
-#   add-zsh-hook precmd  update_git_vars
-#   add-zsh-hook preexec preexec_update_git_vars
-#   add-zsh-hook chpwd   update_git_vars
-# }
-#
-# update_current_git_vars()
-# {
-#   unset __CURRENT_GIT_BRANCH
-#   unset __CURRENT_GIT_BRANCH_STATUS
-#   unset __CURRENT_GIT_BRANCH_IS_DIRTY
-#
-#   local st="$(git status 2>/dev/null)"
-#   if [[ -n "$st" ]]; then
-#           local -a arr
-#           arr=(${(f)st})
-#
-#           if [[ $arr[1] =~ 'Not currently on any branch.' ]]; then
-#                   __CURRENT_GIT_BRANCH='no-branch'
-#           else
-#                   __CURRENT_GIT_BRANCH="${arr[1][(w)4]}";
-#           fi
-#
-#           if [[ $arr[2] =~ 'Your branch is' ]]; then
-#                   if [[ $arr[2] =~ 'ahead' ]]; then
-#                           __CURRENT_GIT_BRANCH_STATUS='ahead'
-#                   elif [[ $arr[2] =~ 'diverged' ]]; then
-#                           __CURRENT_GIT_BRANCH_STATUS='diverged'
-#                   elif [[ $arr[2] =~ 'up-to-date' ]]; then
-#                           __CURRENT_GIT_BRANCH_STATUS=''
-#                   else
-#                           __CURRENT_GIT_BRANCH_STATUS='behind'
-#                   fi
-#           fi
-#
-#           if [[ ! $st =~ 'nothing to commit' ]]; then
-#                   __CURRENT_GIT_BRANCH_IS_DIRTY='1'
-#           fi
-#   fi
-# }
-#
-# prompt_git_info()
-# {
-#   if [ -n "$__CURRENT_GIT_BRANCH" ]; then
-#           local s="("
-#           case "$__CURRENT_GIT_BRANCH_STATUS" in
-#                   ahead)
-#                   s+="↑"
-#                   ;;
-#                   diverged)
-#                   s+="↕"
-#                   ;;
-#                   behind)
-#                   s+="↓"
-#                   ;;
-#           esac
-#           if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
-#                   s+="⚡"
-#           fi
-#           s+="$__CURRENT_GIT_BRANCH"
-#           s+=")"
-#
-#           printf " %s%s" "%{${fg[yellow]}%}" $s
-#   fi
-# }
-#
-# preexec_update_git_vars()
-# {
-#   case "$1" in
-#     git*)
-#        __EXECUTED_GIT_COMMAND=1
-#        ;;
-#   esac
-# }
-#
-# update_git_vars() {
-#   update_current_git_vars
-#
-#   if [ "$__CURRENT_GIT_BRANCH" != "no-branch" ] ; then
-#     RPROMPT="%F{$pcc[3]}$(prompt_git_info)"
-#   fi
-# }
-#
-# prompt_hyacinthe_setup "$@"
-#
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
 
 #	----------------------------------------------------------------------------
 
@@ -1115,26 +709,31 @@
 
 #   Number 6
 
-   RED="\[\033[0;31m\]"
-   YELLOW="\[\033[0;33m\]"
-   BLUE="\[\033[0;34m\]"
+#   RED="\[\033[0;31m\]"
+#   YELLOW="\[\033[0;33m\]"
+#   BLUE="\[\033[0;34m\]"
 
-   BOLD_GREEN="\[\033[1;32m\]"
-   BOLD_PURPLE="\[\033[1;34m\]"
+#   BOLD_GREEN="\[\033[1;32m\]"
+#   BOLD_PURPLE="\[\033[1;34m\]"
 
-   NORMAL="\[\033[0m\]"
+#   NORMAL="\[\033[0m\]"
 
-   export GIT_PS1_SHOWDIRTYSTATE=true
-   export GIT_PS1_SHOWUNTRACKEDFILES=true
-   export GIT_PS1_STATESEPARATOR="$RED"
+#   export GIT_PS1_SHOWDIRTYSTATE=true
+#   export GIT_PS1_SHOWUNTRACKEDFILES=true
+#   export GIT_PS1_STATESEPARATOR="$RED"
 
 #   Don't show if we have a stash
 #   unset GIT_PS1_SHOWSTASHSTATE
 #   We want our own colors
-   unset GIT_PS1_SHOWCOLORHINTS
+#   unset GIT_PS1_SHOWCOLORHINTS
 
-   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
+#   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
 
+#   ------------------------------------------------------------
+
+#   Number 7
+
+    export PS1='\[\e[0;36m\]┌─\[\e[1;37m\][\u@\h]\[\e[0m\]\[\e[0;36m\]─\[\e[0;93m\](\w)\n\[\e[0;36m\]└─\[\e[1;32m\][\A]\[\e[0m\]\$ '
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
