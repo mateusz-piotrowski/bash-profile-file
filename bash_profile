@@ -180,329 +180,13 @@
 
 # export PS1="[\[\033[32m\]\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\]-> \[\033[0m\]"
 
-# export PS1="\[\033[35m\]\t\[\033[m\]-\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-
-# export PS1="\n[\033[1;37m]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '$bold${red}\u'; else echo '$bold${green}\u'; fi)[\033[1;37m])\342\224\200([\033[1;34m]#[\033[1;37m])\342\224\200([\033[1;33m]\@ \d[\033[1;37m])[\033[1;37m]\n\342\224\224\342\224\200([\033[1;32m]\w[\033[1;37m])\342\224\200([\033[1;32m]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b[\033[1;37m])\342\224\200> [\033[0m]"
-
-# green='\e[0;32m'
-# GREEN='\e[0;32m'
-# red='\e[0;31m'
-# RED='\e[1;31m'
-# blue='\e[0;34m'
-# BLUE='\e[1;34m'
-# cyan='\e[0;36m'
-# CYAN='\e[1;36m'
-# NC='\e[0m'
-#
-# [ -z "$PS1" ] && return
-# HISTCONTROL=ignoredups:ignorespace
-# shopt -s histappend
-# HISTSIZE=1000
-# HISTFILESIZE=2000
-# shopt -s checkwinsize
-# complete -cf sudo
-# PROMPT_COMMAND='history -a'
-# shopt -s cdspell
-# shopt -s dirspell
-#
-# export EDITOR=vim
-# TERM=xterm                          # лечим баг с тмуксом (ломает хоткеи прог, считая что это скрины)
-#
-# #---{функция, запускающаяся при выходе из оболочки}---
-# function _exit()
-# {
-#     echo -e "${CYAN}Bye, master :)${NC}"
-# }
-# trap _exit EXIT
-# #-----------------------------------------------------
-#
-# clear
-#
-# # make less more friendly for non-text input files, see lesspipe(1)
-# [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-#
-# # set variable identifying the chroot you work in (used in the prompt below)
-# if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-#     debian_chroot=$(cat /etc/debian_chroot)
-# fi
-#
-# # set a fancy prompt (non-color, unless we know we "want" color)
-# case "$TERM" in
-#     xterm-color) color_prompt=yes;;
-# esac
-#
-# [ -n "$SSH_CLIENT" ] && ps1_informer=" ${BLUE}[ssh]${NC}"
-# [ -n "$RANGER_LEVEL" ] && ps1_informer=" (in ranger)"
-#
-# if [ $(id -u) -eq 0 ];
-# then
-#   PS1="┌${RED}[\u]${NC} [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
-# else
-#   PS1="┌[${GREEN}\u${NC}] [\h]$ps1_informer:\[\e[0;32;49m\]\w\[\e[0m \n└>"
-# fi
-#
-# # Add an "alert" alias for long running commands.  Use like so:
-# #   sleep 10; alert
-# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//     '\'')"'
-#
-# # Alias definitions.
-# # You may want to put all your additions into a separate file like
-# # ~/.bash_aliases, instead of adding them here directly.
-# # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-#
-# if [ -f ~/.bash_aliases ]; then
-#     . ~/.bash_aliases
-# fi
-#
-# # enable programmable completion features (you don't need to enable
-# # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# # sources /etc/bash.bashrc).
-# if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-#     . /etc/bash_completion
-# fi
-#
-# # internal func alias list ---------------
-# alias un="unarchive $1"
-# alias re="renamer"
-# alias c="ssh_choose"
-# #-----------------------------------------
-#
-# alias r='ranger'
-# alias p='ps ax | grep -v grep | grep -i'
-# alias ub='source ~/.bashrc'
-# alias ip='curl ifconfig.me'
-#
-# #-work-------
-# alias m='sudo mount -t cifs -o guest //192.168.233.10/pub /home/lord/GEKTOR'
-# alias x='/home/lord/work'
-# alias z='/home/lord/cisco'
-# #------------
-#
-# #-progs mod--
-# alias tmux='tmux attach || tmux new'
-# alias mtr='mtr -gtk'
-# alias b-sync='/home/lord/.b-sync/master.sh'
-# alias grep='grep --color=auto'
-# alias fgrep='fgrep --color=auto'
-# alias egrep='egrep --color=auto'
-# alias ls='ls --color=auto'
-# #------------
-#
-# alias lvim='vim -u /home/lord/.lvim/vimrc'
-#
-# PATH=$PATH:$HOME/.rvm/bin
-# ---------------------------------------------------
-
-# ------------------------
-# # #~/.bashrc
-#
-# # This is my configuration for bash. I hope to keep it useful across
-# # the computers I use, without depending on bash for my custom
-# # functions if I need them from the outside.
-#
-# # ## Basics {{{
-# # Include `$HOME/.bin` in `$PATH`.
-# export PATH=$HOME/.bin:$PATH
-#
-# # Stop executing if this is not an interactive session.
-# [ -z "$PS1" ] && return
-#
-# # }}}
-#
-# # ## Command entry {{{
-# # Use [bash completion](http://freshmeat.net/projects/bashcompletion), also with sudo completion.
-# if [ -f /etc/bash_completion ]; then
-#     . /etc/bash_completion
-#     complete -cf sudo
-# fi
-#
-# # Set prompt.
-# # `root` has a red prompt, others a yellow one.
-# # If we are connected remotely, `@<hostname>` shows first.
-# build_ps1() {
-#     local prompt_color='\[\e[33m\]'
-#     local host=''
-#     [[ $UID -eq 0 ]] && prompt_color='\[\e[1;31m\]'
-#     [[ $SSH_TTY ]] && host="@$HOSTNAME "
-#     echo "${prompt_color}${host}\w\[\e[0m\] \$ "
-# }
-# PS1=$(build_ps1)
-# PS2='\\ '
-# PS4='+ $LINENO: '
-#
-# # }}}
-#
-# # ## Shell options {{{
-# # Correct minor spelling error when `cd`.
-# shopt -s cdspell
-#
-# # Check and update window size after each command.
-# shopt -s checkwinsize
-#
-# # Include files beginnig with . when using globs.
-# shopt -s dotglob
-#
-# # Enable extended globbing:
-# #
-# # * `?(pattern-list)` matches zero or one occurance of patterns
-# # * `*(pattern-list)` matches zero or more occurances of patterns
-# # * `+(pattern-list)` matches one or more occurances of patterns
-# # * `@(pattern-list)` matches one of the given patterns
-# # * `!(pattern-list)` matches anything but the patterns
-# #
-# # (Don't get too excited here, `find` is your friend)
-# shopt -s extglob
-#
-# # Enable `**/*` for recursive globbing.
-# shopt -s globstar
-#
-# # ##Share history between sessions
-# #
-# # By appending to, and reading from, the history file after each command,
-# # command history will be shared between bash instances.
-# shopt -s histappend
-# export PROMPT_COMMAND="history -a; history -n"
-# export HISTSIZE=10000
-#
-# # }}}
-#
-# # ## Exports {{{
-# # Java needs this to behave on e.g. [dwm](http://dwm.suckless.org).
-# export AWT_TOOLKIT=MToolkit
-#
-# # [jumanji](http://pwmt.org/projects/jumanji) is the default browser.
-# export BROWSER="jumanji"
-#
-# # [vim](http://www.vim.org) is the default editor.
-# export EDITOR="vim"
-#
-# # Run OpenOffice in GTK2 mode.
-# export OOO_FORCE_DESKTOP=gnome
-#
-# # Speed up firefox.
-# export MOZ_DISABLE_PANGO=1
-#
-# # }}}
-#
-# # ## Aliases {{{
-# # Colorize `ls`.
-# alias ls='ls --color=always'
-#
-# # Show colors in less
-# alias less='less -R'
-#
-# # Colorize `grep`.
-# export GREP_COLORS="1;33"
-# alias grep='grep --color=auto'
-#
-# # Convenient `cd..`.
-# alias c="cd .."
-#
-# # Convenient `xdg-open`.
-# alias o="xdg-open"
-#
-# # Never `rm` `/`.
-# alias rm="rm --preserve-root"
-#
-# # Display Monday as first day of week in `cal`.
-# alias cal="cal -m"
-#
-# # Remake a `PKGBUILD` in the current directory.
-# alias repkg="makepkg -efi"
-#
-# # Defaults for bc
-# alias bc="bc -l"
-#
-# # Open multiple files as tabs.
-# alias vim="vim -p"
-#
-# #}}}
-#
-# # ## Functions {{{
-# # [Packer](http://wiki.archlinux.org/index.php/AUR_Helper#packer) / pacman wrapper.
-# # First tries `packer`, which tells us if it won't handle the command.
-# # If `packer` fails, let `pacman` do the job.
-# function p {
-#     packer --noconfirm --noedit $*
-#     [[ $? -eq 5 ]] && pacman $*
-# }
-#
-# # Make directories, cd into the first one
-# function md {
-#     mkdir -p "$@" && cd "$1"
-#
-# }
-#
-# # calculate expression
-# function calc {
-#     echo "$@" | bc -l
-# }
-#
-#
-# # Search man pages for user commands
-# function k {
-#     man -k "$@" | grep '(1' --color=never
-# }
-#
-# # ### cd improvements {{{
-# # Use pushd to preserve history. `cdm` displays a menu of previous dirs,
-# # Adapted from Pro Bash Programming - ISBN 978-1430219989
-#
-# # cd with history - i.e. pushd
-# function cd {
-#     local dir error
-#
-#     while :; do # No support for options, consume them
-#         case $1 in
-#             --) break ;;
-#             -*) shift ;;
-#             *) break ;;
-#         esac
-#     done
-#
-#     dir=${1:-$HOME}
-#
-#     pushd "$dir" 2>/dev/null
-#     error=$?
-#
-#     [[ $error != 0 ]] && builtin cd "$dir"
-#     return "$error"
-# } >/dev/null
-#
-# # cd by menu, with previous directories as options
-# function cdm {
-#     local dir IFS=$'\n' item n
-#
-#     for dir in $(dirs -p); do
-#         [[ "$dir" = "${PWD//$HOME/~}" ]] && continue
-#         [[ ${item[*]} = *"$dir "* ]] && continue
-#
-#         item+=( "$dir " )
-#         [[ ++n -ge 10 ]] && break
-#     done
-#
-#     [[ -z "${item[@]}" ]] && return
-#     echo
-#     select i in "${item[@]}"; do
-#         if [[ "$i" ]]; then
-#             cd "${i//\~/$HOME}"
-#             return $?
-#         fi
-#     done
-# }
-#
-# # }}}
-# # }}}
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
- # export PS1="\n[\033[1;37m]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '$bold${red}\u'; else echo '$bold${green}\u'; fi)[\033[1;37m])\342\224\200([\033[1;34m]#[\033[1;37m])\342\224\200([\033[1;33m]\@ \d[\033[1;37m])[\033[1;37m]\n\342\224\224\342\224\200([\033[1;32m]\w[\033[1;37m])\342\224\200([\033[1;32m]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b[\033[1;37m])\342\224\200> [\033[0m]"
-# ----------------------------------------------------------------------------
-
-#  ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
 
@@ -512,6 +196,7 @@
 
 # ----------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
 
@@ -733,8 +418,15 @@
 
 #   Number 7
 
-    export PS1='\[\e[0;36m\]┌─\[\e[1;37m\][\u@\h]\[\e[0m\]\[\e[0;36m\]─\[\e[0;93m\](\w)\n\[\e[0;36m\]└─\[\e[1;32m\][\A]\[\e[0m\]\$ '
+#   export PS1='\[\e[0;36m\]┌─\[\e[1;37m\][\u@\h]\[\e[0m\]\[\e[0;36m\]─\[\e[0;93m\](\w)\n\[\e[0;36m\]└─\[\e[1;32m\][\A]\[\e[0m\]\$ '
 
+#   ------------------------------------------------------------
+
+#   Number 8
+
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+
+    
 #   ----------------------------------------------------------------------------
 #   Set Paths
 #   ------------------------------------------------------------
