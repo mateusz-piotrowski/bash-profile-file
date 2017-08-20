@@ -50,11 +50,11 @@
 #   ------------------------------------------------------------
 
 #   Number 3
-#    if ((EUID)); then
-#      PS1="\[\e]0;\u@\h:\w\a\e[1;32m\]\u@\h\[\e[34m\] \w \[\e[0m\]\$ "
-#    else
-#      PS1="\[\e]0;\u@\h:\w\a\e[1;31m\]\h\[\e[34m\] \w \[\e[0m\]\$ "
-#    fi
+#  if ((EUID)); then
+#    PS1="\[\e]0;\u@\h:\w\a\e[1;32m\]\u@\h\[\e[34m\] \w \[\e[0m\]\$ "
+#  else
+#    PS1="\[\e]0;\u@\h:\w\a\e[1;31m\]\h\[\e[34m\] \w \[\e[0m\]\$ "
+#  fi
 
 #   ------------------------------------------------------------
 
@@ -189,45 +189,45 @@
 
 #   Number 5
 
-# 	Check if we are local or remote via ssh. if remote, use red colours.
+#	Check if we are local or remote via ssh. if remote, use red colours.
 #  if [ -n "$SSH_CLIENT" ]; then
-#	  Connecting via ssh, use red coloured prompt
-#     if [ "$color_prompt" = yes ]; then
-#         PS1='[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
-#     else
-#         PS1="\[\033[31m\][\w]\[\033[0m\]\n\[\033[1;33m\]\u\[\033[1;31m\] $ \[\033[0m\]"
-#     fi
-#   else
-#	  Local coloured prompt
-#     if [ "$color_prompt" = yes ]; then
-#         PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#     else
-#         PS1="\[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\] $ \[\033[0m\]"
-#     fi
-#   fi
-#   unset color_prompt force_color_prompt
+#   Connecting via ssh, use red coloured prompt
+#    if [ "$color_prompt" = yes ]; then
+#        PS1='[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
+#    else
+#        PS1="\[\033[31m\][\w]\[\033[0m\]\n\[\033[1;33m\]\u\[\033[1;31m\] $ \[\033[0m\]"
+#    fi
+#  else
+#   Local coloured prompt
+#    if [ "$color_prompt" = yes ]; then
+#        PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#    else
+#        PS1="\[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\] $ \[\033[0m\]"
+#    fi
+#  fi
+#  unset color_prompt force_color_prompt
 
 #   ------------------------------------------------------------
 
 #   Number 6
 
-#   RED="\[\033[0;31m\]"
-#   YELLOW="\[\033[0;33m\]"
-#   BLUE="\[\033[0;34m\]"
+#  RED="\[\033[0;31m\]"
+#  YELLOW="\[\033[0;33m\]"
+#  BLUE="\[\033[0;34m\]"
 
-#   BOLD_GREEN="\[\033[1;32m\]"
-#   BOLD_PURPLE="\[\033[1;34m\]"
+#  BOLD_GREEN="\[\033[1;32m\]"
+#  BOLD_PURPLE="\[\033[1;34m\]"
 
-#   NORMAL="\[\033[0m\]"
+#  NORMAL="\[\033[0m\]"
 
-#   export GIT_PS1_SHOWDIRTYSTATE=true
-#   export GIT_PS1_SHOWUNTRACKEDFILES=true
-#   export GIT_PS1_STATESEPARATOR="$RED"
+#  export GIT_PS1_SHOWDIRTYSTATE=true
+#  export GIT_PS1_SHOWUNTRACKEDFILES=true
+#  export GIT_PS1_STATESEPARATOR="$RED"
 
-#   Don't show if we have a stash
-#   unset GIT_PS1_SHOWSTASHSTATE
-#   We want our own colors
-#   unset GIT_PS1_SHOWCOLORHINTS
+#  Don't show if we have a stash
+#  unset GIT_PS1_SHOWSTASHSTATE
+#  We want our own colors
+#  unset GIT_PS1_SHOWCOLORHINTS
 
 #   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
 
@@ -241,7 +241,7 @@
 
 #   Number 8
 
-#   export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+#  export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 
 
 #   ------------------------------------------------------------
@@ -251,40 +251,6 @@
 #   export PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
 
 #   ------------------------------------------------------------
-
-#   Number 10
-
-    PS1_TIME='\033[01;31m\]\t \033[01;32m\]'
-    PS1_USERNAME='\[\e[1;36m\]\u\e[1;37m\]@\e[1;32m\]\h\[\033[00m\]'
-    PS1_LOCATION='\[\033[01;34m\]\w\[\033[00m\]'
-    parse_git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
-    PS1_GIT=' \[\033[00;33m\]$(parse_git_branch)\[\033[00m\]\]'
-
-    PS1=$PS1_DEBIAN_CHROOT$PS1_TIME$PS1_USERNAME':'$PS1_LOCATION$PS1_GIT'\n\$ '
-    PS2='\[\033[01;36m\]>'
-
-    SH_WHITE="\[\033[1;37m\]"
-    SH_BLUE="\[\033[1;34m\]"
-    SH_RED="\[\033[1;31m\]"
-    SH_GREEN="\[\033[1;32m\]"
-    SH_YELLOW="\[\033[1;33m\]"
-
-    BL_ANGLE="\342\224\224"
-    TL_ANGLE="\342\224\214"
-    HORIZ_LINE="\342\224\200"
-
-    FILES_STAT="\$(ls -1 | wc -l | sed 's: ::g')"
-    FILES_SIZE="\$(ls -lah | grep -m 1 total | sed 's/1:total //')b"
-    GIT_PS1='$(__git_ps1 "(%s)")'
-
-    if [ $UID -eq 0 ]; then
-    PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
-    elif [ -n "$SSH_CLIENT" ]; then
-      PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\] $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
-    else
-      PS1=""${SH_WHITE}${TL_ANGLE}"("${SH_BLUE}"\u"${SH_WHITE}"@"${SH_RED}"\h"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\$?"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}${BATT}${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\@ \d"${SH_WHITE}")\n"${BL_ANGLE}${HORIZ_LINE}"("${SH_GREEN}"\w"${SH_WHITE}")"${HORIZ_LINE}"("${SH_YELLOW}${FILES_STAT}" files, "${FILES_SIZE}${SH_WHITE}")"${HORIZ_LINE}${SH_BLUE}${GIT_PS1}${SH_WHITE}"> "${SH_GREEN}
-    fi
-    trap 'echo -ne "\e[0m"' DEBUG
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
