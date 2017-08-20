@@ -229,13 +229,7 @@
 #  We want our own colors
 #  unset GIT_PS1_SHOWCOLORHINTS
 
-#   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
-
-#   ------------------------------------------------------------
-
-#   Number 7
-
-    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+#  export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
