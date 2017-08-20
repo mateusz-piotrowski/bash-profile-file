@@ -35,177 +35,6 @@
 #   ------------------------------------------------------------
 #   PROMPT_COMMAND='__git_ps1 "\h:\W" "\\\$ "'";$PROMPT_COMMAND"
 
-
-#   Change Command Prompt
-#   ------------------------------------------------------------
-
-#   export PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
-
-#   export PS1='\[\033[1;34m\]\!\[\033[0m\] \[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\W\[\033[0m\] \[\033[1;92m\]$(__git_ps1 "(%s)")\[\033[0m\]$ '
-
-#   export PS1="\[$(tput bold)$(tput setb 4)$(tput setaf 7)\]\u@\h:\w $ \[$(tput sgr0)\]"
-#   export PS1="\[\033[34m\][\$(date +%H%M)][\u@\h:\w]$ "
-#   export PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
-#   export PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
-#   export PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]$(acpi -b | awk "{print \$4}" | cut -b1-3) $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
-
-#    PS1_DEBIAN_CHROOT='${debian_chroot:+($debian_chroot)}'
-#    PS1_TIME='\033[01;31m\]\t \033[01;32m\]'
-#    PS1_USERNAME='\[\e[1;36m\]\u\e[1;37m\]@\e[1;32m\]\h\[\033[00m\]'
-#    PS1_LOCATION='\[\033[01;34m\]\w\[\033[00m\]'
-#    parse_git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
-#    PS1_GIT=' \[\033[00;33m\]$(parse_git_branch)\[\033[00m\]\]'
-#
-#    PS1=$PS1_DEBIAN_CHROOT$PS1_TIME$PS1_USERNAME':'$PS1_LOCATION$PS1_GIT'\n\$ '
-#    PS2='\[\033[01;36m\]>'
-
-#    SH_WHITE="\[\033[1;37m\]"
-#    SH_BLUE="\[\033[1;34m\]"
-#    SH_RED="\[\033[1;31m\]"
-#    SH_GREEN="\[\033[1;32m\]"
-#    SH_YELLOW="\[\033[1;33m\]"
-#
-#    BL_ANGLE="\342\224\224"
-#    TL_ANGLE="\342\224\214"
-#    HORIZ_LINE="\342\224\200"
-#
-#    BATT="\$(acpi -b | awk '{print \$4}' | cut -b1-3)"
-#    FILES_STAT="\$(ls -1 | wc -l | sed 's: ::g')"
-#    FILES_SIZE="\$(ls -lah | grep -m 1 total | sed 's/1:total //')b"
-#    GIT_PS1='$(__git_ps1 "(%s)")'
-#
-#    if [ $UID -eq 0 ]; then
-#    PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
-#    elif [ -n "$SSH_CLIENT" ]; then
-#    PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]$(acpi -b | awk "{print \$4}" | cut -b1-3) $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
-#    else
-#    PS1="\n"${SH_WHITE}${TL_ANGLE}"("${SH_BLUE}"\u"${SH_WHITE}"@"${SH_RED}"\h"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\$?"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}${BATT}${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\@ \d"${SH_WHITE}")\n"${BL_ANGLE}${HORIZ_LINE}"("${SH_GREEN}"\w"${SH_WHITE}")"${HORIZ_LINE}"("${SH_YELLOW}${FILES_STAT}" files, "${FILES_SIZE}${SH_WHITE}")"${HORIZ_LINE}${SH_BLUE}${GIT_PS1}${SH_WHITE}"> "${SH_GREEN}
-#    fi
-#    trap 'echo -ne "\e[0m"' DEBUG
-#    ------------
-
-#    ------------
-#    SH_WHITE="\[\033[1;37m\]"
-#    SH_BLUE="\[\033[1;34m\]"
-#    SH_RED="\[\033[1;31m\]"
-#    SH_GREEN="\[\033[1;32m\]"
-#    SH_YELLOW="\[\033[1;33m\]"
-#
-#    BL_ANGLE="\342\224\224"
-#    TL_ANGLE="\342\224\214"
-#    HORIZ_LINE="\342\224\200"
-#
-#    BATT="\$(acpi -b | awk '{print \$4}' | cut -b1-3)"
-#    FILES_STAT="\$(ls -1 | wc -l | sed 's: ::g')"
-#    FILES_SIZE="\$(ls -lah | grep -m 1 total | sed 's/1:total //')b"
-#    GIT_PS1='$(__git_ps1 "(%s)")'
-#
-#    if [ $UID -eq 0 ]; then
-#    PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
-#    elif [ -n "$SSH_CLIENT" ]; then
-#    PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]$(acpi -b | awk "{print \$4}" | cut -b1-3) $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
-#    else
-#    PS1="\n"${SH_WHITE}${TL_ANGLE}"("${SH_BLUE}"\u"${SH_WHITE}"@"${SH_RED}"\h"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\$?"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}${BATT}${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\@ \d"${SH_WHITE}")\n"${BL_ANGLE}${HORIZ_LINE}"("${SH_GREEN}"\w"${SH_WHITE}")"${HORIZ_LINE}"("${SH_YELLOW}${FILES_STAT}" files, "${FILES_SIZE}${SH_WHITE}")"${HORIZ_LINE}${SH_BLUE}${GIT_PS1}${SH_WHITE}"> "${SH_GREEN}
-#    fi
-#    trap 'echo -ne "\e[0m"' DEBUG
-#    ------------
-
-#    ------------
-# PS1="\n\e[30;1mUSER ( \e[0m\e[33;1m\w\e[0m\e[30;1m )\e[0m\e[33;33m\n$ \e[0m"
-
-# PS1='\[\e[1;36m\]\d \[\e[1;32m\]\t \[\e[1;33m\]\u@\[\e[1;35m\]\h:\w\$\[\e[0;31m\]'
-
-# PS1="\n\[\033[35m\]\$(/bin/date)\n\[\033[32m\]\w\n\[\033[1;31m\]\u@\h: \[\033[1;34m\]\$') files \[\033[1;33m\]\$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\033[0m\] -> \[\033[0m\]"
-
-# PS1="\n\[\e[1;30m\][$$:$PPID - \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY:-o} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n\$ "
-
-# PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -n "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p"))"\033[38;5;22m/"$((`sed -n "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"' \
-# PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
-
-#    ------------
-# function aa_prompt_defaults ()
-# {
-#    local colors=`tput colors 2>/dev/null||echo -n 1` C=;
-#
-#    if [[ $colors -ge 256 ]]; then
-#       C="`tput setaf 33 2>/dev/null`";
-#       AA_P='mf=x mt=x n=0; while [[ $n < 1 ]];do read a mt a; read a mf a; (( n++ )); done</proc/meminfo; export AA_PP="\033[38;5;2m"$((mf/1024))/"\033[38;5;89m"$((mt/1024))MB; unset -v mf mt n a';
-#    else
-#       C="`tput setaf 4 2>/dev/null`";
-#       AA_P='mf=x mt=x n=0; while [[ $n < 1 ]];do read a mt a; read a mf a; (( n++ )); done</proc/meminfo; export AA_PP="\033[92m"$((mf/1024))/"\033[32m"$((mt/1024))MB; unset -v mf mt n a';
-#    fi;
-#
-#    eval $AA_P;
-#
-#    PROMPT_COMMAND='stty echo; history -a; echo -en "\e[34h\e[?25h"; (($SECONDS % 2==0 )) && eval $AA_P; echo -en "$AA_PP";';
-#    SSH_TTY=${SSH_TTY:-`tty 2>/dev/null||readlink /proc/$$/fd/0 2>/dev/null`}
-#
-#    PS1="\[\e[m\n\e[1;30m\][\$\$:\$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][${C}\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY/\/dev\/} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\]\n\\$ ";
-#
-#    export PS1 AA_P PROMPT_COMMAND SSH_TTY
-# }
-
-#
-# export AA_P="export PVE=\"\\033[m\\033[38;5;2m\"\$(( \`sed -n \"s/MemFree:[\\t ]\\+\\([0-9]\\+\\) kB/\\1/p\" /proc/meminfo\` / 1024 ))\"\\033[38;5;22m/\"\$((\`sed -n \"s/MemTotal:[\\t ]\\+\\([0-9]\\+\\) kB/\\1/p\" /proc/meminfo\`/ 1024 ))MB\"\\t\\033[m\\033[38;5;55m\$(< /proc/loadavg)\\033[m\";echo -en \"\"" \
-# export PROMPT_COMMAND="history -a;((\$SECONDS % 10==0 ))&&eval \"\$AA_P\";echo -en \"\$PVE\";" \
-# export PS1="\\[\\e[m\\n\\e[1;30m\\][\$\$:\$PPID \\j:\\!\\[\\e[1;30m\\]]\\[\\e[0;36m\\] \\T \\d \\[\\e[1;30m\\][\\[\\e[1;34m\\]\\u@\\H\\[\\e[1;30m\\]:\\[\\e[0;37m\\]\${SSH_TTY} \\[\\e[0;32m\\]+\${SHLVL}\\[\\e[1;30m\\]] \\[\\e[1;37m\\]\\w\\[\\e[0;37m\\] \\n(\$SHLVL:\\!)\\\$ " \
-# export PVE="\\033[m\\033[38;5;2m813\\033[38;5;22m/1024MB\\t\\033[m\\033[38;5;55m0.25 0.22 0.18 1/66 26820\\033[m" && eval $AA_P
-
-#
-# export PROMPT_COMMAND='echo -en "\033[m\033[38;5;2m"$(( `sed -n "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p"))"\033[38;5;22m/"$((`sed -n "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\t\033[m\033[38;5;55m$(< /proc/loadavg)\033[m"' \
-#   export PS1='\[\e[m\n\e[1;30m\][$$:$PPID \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \d \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n($SHLVL:\!)\$ '
-
-# export PROMPT_COMMAND='export H1="`history 1|sed -e "s/^[\ 0-9]*//; s/[\d0\d31\d34\d39\d96\d127]*//g; s/\(.\{1,50\}\).*$/\1/g"`";history -a;echo -e "sgr0\ncnorm\nrmso"|tput -S'
-# export PS1='\n\e[1;30m[\j:\!\e[1;30m]\e[0;36m \T \d \e[1;30m[\e[1;34m\u@\H\e[1;30m:\e[0;37m`tty 2>/dev/null` \e[0;32m+${SHLVL}\e[1;30m] \e[1;37m\w\e[0;37m\[\033]0;[ ${H1}... ] \w - \u@\H +$SHLVL @`tty 2>/dev/null` - [ `uptime` ]\007\]\n\[\]\$'
-
-# export PS1=`history 1 | sed -e 's/^[\ 0-9]*//; s/[\d0\d31\d34\d39\d96\d127]*//g; s/\(.\{1,50\}\).*$/\1/g'`
-
-# export PS1='\n\e[1;30m[\j:\!\e[1;30m]\e[0;36m \T \d \e[1;30m[\e[1;34m\u@\H\e[1;30m:\e[0;37m`tty 2>/dev/null` \e[0;32m+${SHLVL}\e[1;30m] \e[1;37m\w\e[0;37m\[\033]0;[ ${H1}... ] \w - \u@\H +$SHLVL @`tty 2>/dev/null` - [ `uptime` ]\007\]\n\[\]\$ '
-
-# export PS1="\n\e[1;37m[\e[0;32m\u\e[0;35m@\e[0;32m\h\e[1;37m]\e[1;37m[\e[0;31m\w\e[1;37m]\n$ \e[0m"
-
-# export PS1="\n[$?]\e[1;37m[\e[0;32m\u\e[0;35m@\e[0;32m\h\e[1;37m]\e[1;37m[\e[0;31m\w\e[1;37m]($SHLVL:\!)\n\[\033[0m\]\$ "
-
-#export PS1='\[\033[1;33m\]\u\[\033[1;37m\]@\[\033[1;32m\]\h\[\033[1;37m\]:\[\033[1;31m\]\w \[\033[1;36m\]\$ \[\033[0m\]'
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------
-
 #   ----------------------------------------------------------------------------
 #   Checked command prompt
 #   ------------------------------------------------------------
@@ -419,7 +248,43 @@
 
 #   Number 9
 
-    export PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+#   export PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo '\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+
+#   ------------------------------------------------------------
+
+#   Number 10
+
+    PS1_TIME='\033[01;31m\]\t \033[01;32m\]'
+    PS1_USERNAME='\[\e[1;36m\]\u\e[1;37m\]@\e[1;32m\]\h\[\033[00m\]'
+    PS1_LOCATION='\[\033[01;34m\]\w\[\033[00m\]'
+    parse_git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
+    PS1_GIT=' \[\033[00;33m\]$(parse_git_branch)\[\033[00m\]\]'
+
+    PS1=$PS1_DEBIAN_CHROOT$PS1_TIME$PS1_USERNAME':'$PS1_LOCATION$PS1_GIT'\n\$ '
+    PS2='\[\033[01;36m\]>'
+
+    SH_WHITE="\[\033[1;37m\]"
+    SH_BLUE="\[\033[1;34m\]"
+    SH_RED="\[\033[1;31m\]"
+    SH_GREEN="\[\033[1;32m\]"
+    SH_YELLOW="\[\033[1;33m\]"
+
+    BL_ANGLE="\342\224\224"
+    TL_ANGLE="\342\224\214"
+    HORIZ_LINE="\342\224\200"
+
+    FILES_STAT="\$(ls -1 | wc -l | sed 's: ::g')"
+    FILES_SIZE="\$(ls -lah | grep -m 1 total | sed 's/1:total //')b"
+    GIT_PS1='$(__git_ps1 "(%s)")'
+
+    if [ $UID -eq 0 ]; then
+    PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;37m\]@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;32m\]'
+    elif [ -n "$SSH_CLIENT" ]; then
+      PS1='\[\e[0;31m\](SSH)\[\e[m\]\[\e[1;37m\]\u@\h\[\e[m\] \[\e[1;34m\]\W\[\e[m\] \[\e[1;32m\] $(__git_ps1 "(%s) ")\$\[\e[m\] \[\e[1;32m\]'
+    else
+      PS1=""${SH_WHITE}${TL_ANGLE}"("${SH_BLUE}"\u"${SH_WHITE}"@"${SH_RED}"\h"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\$?"${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}${BATT}${SH_WHITE}")"${HORIZ_LINE}"("${SH_GREEN}"\@ \d"${SH_WHITE}")\n"${BL_ANGLE}${HORIZ_LINE}"("${SH_GREEN}"\w"${SH_WHITE}")"${HORIZ_LINE}"("${SH_YELLOW}${FILES_STAT}" files, "${FILES_SIZE}${SH_WHITE}")"${HORIZ_LINE}${SH_BLUE}${GIT_PS1}${SH_WHITE}"> "${SH_GREEN}
+    fi
+    trap 'echo -ne "\e[0m"' DEBUG
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
@@ -496,7 +361,7 @@
 
 #	If set, the pattern "**" used in a pathname expansion context will
 #	match all files and zero or more directories and subdirectories.
-	shopt -s globstar
+#	shopt -s globstar
 
 # 	Make less more friendly for non-text input files, see lesspipe(1)
 	[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
