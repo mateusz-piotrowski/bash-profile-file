@@ -189,47 +189,25 @@
 
 #   Number 5
 
-#	Check if we are local or remote via ssh. if remote, use red colours.
-#  if [ -n "$SSH_CLIENT" ]; then
-#   Connecting via ssh, use red coloured prompt
-#    if [ "$color_prompt" = yes ]; then
-#        PS1='[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
-#    else
-#        PS1="\[\033[31m\][\w]\[\033[0m\]\n\[\033[1;33m\]\u\[\033[1;31m\] $ \[\033[0m\]"
-#    fi
-#  else
-#   Local coloured prompt
-#    if [ "$color_prompt" = yes ]; then
-#        PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#    else
-#        PS1="\[\033[32m\][\w]\[\033[0m\]\n\[\033[1;36m\]\u\[\033[1;33m\] $ \[\033[0m\]"
-#    fi
-#  fi
-#  unset color_prompt force_color_prompt
+  RED="\[\033[0;31m\]"
+  YELLOW="\[\033[0;33m\]"
+  BLUE="\[\033[0;34m\]"
 
-#   ------------------------------------------------------------
+  BOLD_GREEN="\[\033[1;32m\]"
+  BOLD_PURPLE="\[\033[1;34m\]"
 
-#   Number 6
+  NORMAL="\[\033[0m\]"
 
-#  RED="\[\033[0;31m\]"
-#  YELLOW="\[\033[0;33m\]"
-#  BLUE="\[\033[0;34m\]"
-
-#  BOLD_GREEN="\[\033[1;32m\]"
-#  BOLD_PURPLE="\[\033[1;34m\]"
-
-#  NORMAL="\[\033[0m\]"
-
-#  export GIT_PS1_SHOWDIRTYSTATE=true
-#  export GIT_PS1_SHOWUNTRACKEDFILES=true
-#  export GIT_PS1_STATESEPARATOR="$RED"
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export GIT_PS1_STATESEPARATOR="$RED"
 
 #  Don't show if we have a stash
-#  unset GIT_PS1_SHOWSTASHSTATE
+   unset GIT_PS1_SHOWSTASHSTATE
 #  We want our own colors
-#  unset GIT_PS1_SHOWCOLORHINTS
+   unset GIT_PS1_SHOWCOLORHINTS
 
-#  export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
+   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
