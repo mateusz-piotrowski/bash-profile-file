@@ -42,7 +42,7 @@
 
 #   Number 1
 
-#   source ~/.terminal-prompt.sh
+    source ~/.terminal-prompt.sh
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
