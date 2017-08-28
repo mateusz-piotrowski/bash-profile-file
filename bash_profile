@@ -48,7 +48,6 @@
 #   Number 2
 #   export PS1="\[\`if [[ \$? = "0" ]]; then echo '\e[32m\h\e[0m'; else echo '\e[31m\h\e[0m' ; fi\`:\w\n\$ "
 
-
 #   ------------------------------------------------------------
 
 #   Number 3
@@ -58,36 +57,11 @@
 #    PS1="\[\e]0;\u@\h:\w\a\e[1;31m\]\h\[\e[34m\] \w \[\e[0m\]\$ "
 #  fi
 
-
 #   ------------------------------------------------------------
  
 #  Number 4
 
 #  source ~/.terminal-prompt.sh
-
-#   ------------------------------------------------------------
-
-#  Number 5
-
-#  RED="\[\033[0;31m\]"
-#  YELLOW="\[\033[0;33m\]"
-#  BLUE="\[\033[0;34m\]"
-
-#  BOLD_GREEN="\[\033[1;32m\]"
-#  BOLD_PURPLE="\[\033[1;34m\]"
-
-#  NORMAL="\[\033[0m\]"
-
-#  export GIT_PS1_SHOWDIRTYSTATE=true
-#  export GIT_PS1_SHOWUNTRACKEDFILES=true
-#  export GIT_PS1_STATESEPARATOR="$RED"
-
-#  Don't show if we have a stash
-#   unset GIT_PS1_SHOWSTASHSTATE
-#  We want our own colors
-#   unset GIT_PS1_SHOWCOLORHINTS
-
-#   export PROMPT_COMMAND="__git_ps1 \"$BOLD_GREEN\u@\h$NORMAL:$BOLD_PURPLE\w$NORMAL\" \" $ \" \"$YELLOW[%s$YELLOW]$NORMAL\""
 
 #   ----------------------------------------------------------------------------
 #   Set Paths
