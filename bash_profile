@@ -41,11 +41,6 @@
 #   ------------------------------------------------------------
 
 #   Number 1
-#   export PS1="[ \u@\h | \W  \$(/bin/ls -1 | /usr/bin/wc -l) files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/local/Cellar/gnu-sed/4.4/bin/gsed 's/total //')m\] ]\n $ "
-
-#   ------------------------------------------------------------
-
-#   Number 2
 
 #   source ~/.terminal-prompt.sh
 
