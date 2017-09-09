@@ -92,6 +92,7 @@
     alias show_options='shopt'                  # Show_options: display bash options settings
     alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
     alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
+    alias vi=vim                                # vi:           Run vim as vi command
 
 #	Bash completion for Bash 4.1+
     if [ -f /usr/local/share/bash-completion/bash_completion ]; then
