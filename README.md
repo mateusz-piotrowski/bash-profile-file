@@ -2,7 +2,7 @@
 
 ### Description
 
-This project is contain .bash_profile file
+This project contains .bash_profile file
 with changes to improve communication using bash shell.
 
 ### Motivation
@@ -15,7 +15,7 @@ to add new functionalities to system commands.
 1. Clone repository from server.
 
     ```
-    git clone https://gitlab.com/mapispace/bash-profile-file.git
+    git clone https://github.com/mateusz-piotrowski/bash-profile-file.git
     ```
 
 1. Copy files to home folder.
