@@ -10,3 +10,8 @@
 
 - bash_profile
   -> update bash-completion support
+
+**Changed :**
+
+- bash_profile
+  -> delete personal Homebrew GitHub API Token

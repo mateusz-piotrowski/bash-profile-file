@@ -50,7 +50,7 @@
 
 #   Set Homebrew Token
 #   ------------------------------------------------------------
-    export HOMEBREW_GITHUB_API_TOKEN="8de5ef0af60f84f164321a921e7050597f8fe586"
+    export HOMEBREW_GITHUB_API_TOKEN=""
 
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------
