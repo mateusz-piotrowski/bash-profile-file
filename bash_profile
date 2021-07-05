@@ -94,10 +94,8 @@
     alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
     alias vi=vim                                # vi:           Run vim as vi command
 
-#	Bash completion for Bash 4.1+
-    if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
-  	fi
+#	Bash completion
+    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # 	Don't put duplicate lines or lines starting with space in the history.
 	HISTCONTROL=ignoreboth
